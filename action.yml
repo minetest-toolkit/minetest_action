@@ -1,0 +1,15 @@
+---
+name: Minetest Action
+description: Run Minetest Type Checking
+inputs:
+  version:
+    description: 'Minetest version to use'
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v4.1.1
+      with:
+        repository: "https://github.com/minetest-toolkit/minetest-lsp-api"
+        path: "deps/minetest"
+
+    - uses: mrcjkb/lua-typecheck-action@v0.2.0
